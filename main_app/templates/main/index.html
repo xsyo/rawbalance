@@ -1,0 +1,534 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>New Site by UXCodes</title>
+	<meta name="description" content="New Site by UXCode">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="{% static 'images/favicon.ico' %}">
+	<meta property="og:image" content="images/dest/preview.jpg">
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href= "{% static 'css/app.min.css' %}" >
+
+
+</head>
+
+<body>
+
+	<!-- Developed by UxCodes -->
+
+
+	<!-- <div class="loader" id="page-loader">
+		<div class="preloader__wrapper">
+			<div class="prelaoder-block"></div>
+			<div class="prelaoder-block"></div>
+			<div class="prelaoder-block"></div>
+			<div class="prelaoder-block"></div>
+			<div class="prelaoder-block"></div>
+		</div>
+	</div> -->
+
+	<div class="wrapper">
+		<main class="main__content">
+
+			<header class="main__header">
+				<div class="top__line">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-lg-2 col-4">
+								<a href="/" class="top__line-brand">
+									<picture>
+										<source srcset="{% static 'images/dest/logo.webp' %}"   type="image/webp">
+										<source srcset="{% static 'images/dest/logo.png' %}" type="image/png">
+										<img src="{% static 'images/dest/logo.png' %}" alt="Raw Balance">
+									</picture>
+								</a>
+							</div>
+							<!-- /.col-lg-2 -->
+							<div class="col-lg-7 col-8">
+								<div class="hamburger-wrapper d-block d-lg-none">
+									<button class="hamburger hamburger--collapse" type="button">
+										<span class="hamburger-box">
+											<span class="hamburger-inner"></span>
+										</span>
+									</button>
+								</div>
+								<!-- /.hamburger-wrapper -->
+								<nav class="top__line-nav d-lg-block d-none">
+									<ul class="nav">
+										<li class="nav__li"><a href="{% url 'main' %}" class="nav__link">Home</a></li>
+									<li class="nav__li"><a href="{% url 'about' %}" class="nav__link">About us</a></li>
+									<li class="nav__li"><a href="{% url 'products' %}" class="nav__link">Products</a></li>
+									<li class="nav__li"><a href="#" class="nav__link">Meats</a></li>
+									<li class="nav__li"><a href="{% url 'contacts' %}" class="nav__link">Contacts</a></li>
+									</ul>
+								</nav>
+								<!-- /.top__line-nav -->
+							</div>
+							<!-- /.col-lg-7 -->
+							<div class="col-lg-3 d-lg-flex d-none">
+								<ul class="top__line-account d-lg-flex d-none">
+									{% if user.is_authenticated %}
+										<li class="account__li"><a href="{% url 'login' %}" class="account__link">Login</a></li>
+										<li class="account__li btn-border"><a href="{% url 'registration' %}" class="account__link">Sign in</a></li>
+									{% else %}
+										<li class="account__li"><a href="{% url 'logout' %}" class="account__link">Logout</a></li>
+									{% endif %}
+								</ul>
+								<!-- /.top__line-account -->
+							</div>
+							<!-- /.col-lg-3 -->
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+				</div>
+				<!-- /.top__line -->
+				<div class="header__content">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="header__content-left">
+									<span class="header__content-title">lorem ipsum is dolor</span>
+									<h1 class="header__content-h1">lorem ipsum</h1>
+									<p class="header__content-desc">Lorem ipsum is dolor</p>
+									<!-- /.header__content-desc -->
+									<div class="header__content-wrapper">
+										<a href="#" class="btn header__content-link"><i class="fa fa-shopping-bag fa-fw"></i>go to shop</a>
+									</div>
+									<!-- /.btn__wrapper -->
+								</div>
+								<!-- /.header__content-left -->
+							</div>
+							<!-- /.col-lg-6 -->
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+				</div>
+				<!-- /.header__content -->
+			</header>
+			<!-- /.main__header -->
+
+			<section class="section s-about">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-5 order-lg-1 order-2">
+							<div class="about__left">
+								<h2 class="about__left-h2">Raw is <strong>better</strong></h2>
+								<p class="about__left-desc">
+									We focus on providing the highest quality Raw Dog Food. All of the meat we use is local. We offer only
+									the highest quality products. There is no substitute for quality, so we provide only the best. All of
+									our products are available non-ground, so you rest assured that there is no additives or substitutes
+									in what you feed your dog. Our dogs deserve our love, affection, and Raw Balance dog food.
+								</p>
+								<div class="about__left-wrapper">
+									<a href="#" class="btn-border"><i class="fa fa-info-circle"></i>Read more</a>
+								</div>
+								<!-- /.about__btn-wrapper -->
+							</div>
+							<!-- /.about__left -->
+						</div>
+						<!-- /.col-lg-5 -->
+						<div class="col-lg-7 order-lg-2 order-1">
+							<div class="about__right">
+								<div class="about__right-img">
+									<picture>
+										<source srcset="{% static 'images/dest/about-img.webp' %}" type="image/webp">
+										<source srcset="{% static 'images/dest/about-img.png' %}" type="image/png">
+										<img src="{% static 'images/dest/about-img.png' %}" alt="About Image">
+									</picture>
+								</div>
+								<!-- /.about__right-img -->
+							</div>
+							<!-- /.about__right -->
+						</div>
+						<!-- /.col-lg-7 -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+
+				<div class="feed__raw">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<h2>Why feed <strong>Raw?</strong></h2>
+								<span>Click to learn the amazing benefits</span>
+
+								<div class="dog__wrapper">
+									<img src="{% static 'images/dest/dog.png' %}" alt="Dog">
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+									<div class="dog__items">
+										<div class="dog__text">Soft&Shiny coat</div>
+										<!-- /.dog__text -->
+										<div class="dog__action">+</div>
+										<!-- /.dog__action -->
+									</div>
+									<!-- /.dog__items -->
+
+								</div>
+								<!-- /.dog__wrapper -->
+
+							</div>
+							<!-- /.col-12 -->
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+				</div>
+				<!-- /.feed__raw -->
+
+			</section>
+			<!-- /.section s-about -->
+
+			<section class="section s-products">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="products__top">
+								<h2 class="products__top-h2"><strong>SHOP</strong> WITH US</h2>
+								<!-- /.products__top-h2 -->
+								<p class="products__top-desc">By feeding your dog raw meat there will be many noticeable improvements in
+									regards<br> to your pet's hygiene, weight, stamina, and energy level.</p>
+								<!-- /.products__top-desc -->
+								<ul class="products__top-filter">
+									<li class="filter__list active" data-filter="all">All</li>
+									{% for category in categories %}
+										<li class="filter__list" data-filter="{{ category.name }}">{{ category.name }}</li>
+									{% endfor %}
+									
+								</ul>
+								<!-- /.products__top-filter -->
+							</div>
+							<!-- /.products__top -->
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<div class="products__wrapper">
+						<div class="row">
+						{% for product in products %}
+							<div class="col-lg-3">
+								<div class="products__items" data-cat="{{ product.categoty }}">
+									<div class="products__items-img">
+										<img src="{{ product.img.url }}" alt="Honeycomb Tripe">
+									</div>
+									<!-- /.products__items-img -->
+									<h4 class="products__items-title">{{ product.title }}</h4>
+									<!-- /.products__items-title -->
+									<p class="products__items-desc">{{ product.description|slice:':30' }}...</p>
+									<!-- /.products__items-desc -->
+									<div class="products__items-bottom">
+										<div class="price">C$ {{ product.price }}</div>
+										<!-- /.price -->
+										<a href="#" class="btn">Buy</a>
+									</div>
+									<!-- /.products__items-bottom -->
+								</div>
+								<!-- /.products__items -->
+							</div>
+							<!-- /.col-lg-3 -->
+						{% endfor %}
+
+						</div>
+						<!-- /.row -->
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="products__bottom">
+									<a href="{% url 'products' %}" class="btn-border">Show More</a>
+								</div>
+								<!-- /.products__bottom -->
+							</div>
+							<!-- /.col-lg-12 -->
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.products__wrapper -->
+				</div>
+				<!-- /.container -->
+			</section>
+			<!-- /.section s-products -->
+
+			<section class="section s-reviews">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h2><strong>Reviews</strong> of our clients</h2>
+						</div>
+						<!-- /.col-12 -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+
+				<div class="reviews__wrapper owl-carousel">
+					<a href="#" class="reviews__items" style="background-image: url({% static 'images/dest/reviews/1.jpg' %});">
+						<i class="fa fa-play-circle"></i>
+					</a>
+					<!-- /.reviews__items -->
+					<a href="#" class="reviews__items" style="background-image: url({% static 'images/dest/reviews/1.jpg' %});">
+						<i class="fa fa-play-circle"></i>
+					</a>
+					<!-- /.reviews__items -->
+					<a href="#" class="reviews__items" style="background-image: url({% static 'images/dest/reviews/1.jpg' %});">
+						<i class="fa fa-play-circle"></i>
+					</a>
+					<!-- /.reviews__items -->
+					<a href="#" class="reviews__items" style="background-image: url({% static 'images/dest/reviews/1.jpg' %});">
+						<i class="fa fa-play-circle"></i>
+					</a>
+					<!-- /.reviews__items -->
+					<a href="#" class="reviews__items" style="background-image: url({% static 'images/dest/reviews/1.jpg' %});">
+						<i class="fa fa-play-circle"></i>
+					</a>
+					<!-- /.reviews__items -->
+					<a href="#" class="reviews__items" style="background-image: url({% static 'images/dest/reviews/1.jpg' %});">
+						<i class="fa fa-play-circle"></i>
+					</a>
+					<!-- /.reviews__items -->
+					<a href="#" class="reviews__items" style="background-image: url({% static 'images/dest/reviews/1.jpg' %});">
+						<i class="fa fa-play-circle"></i>
+					</a>
+					<!-- /.reviews__items -->
+				</div>
+				<!-- /.reviews__wrapper -->
+
+			</section>
+			<!-- /.section s-reviews -->
+
+		</main>
+		<!-- /.main__content -->
+
+		<section class="section s-contacts">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="footer_h2">Contact us</h2>
+					</div>
+					<!-- /.col-12 -->
+				</div>
+				<!-- /.row -->
+				<div class="row">
+					<div class="col-lg-4">
+						<ul class="footer__contacts">
+							<li class="footer__contacts-li"><a href="#"><i class="fa fa-map-marker fa-fw"></i> 10330 Yonge St Unit 1,
+									Richmondhill, Toronto, ON L4C 5N1</a></li>
+							<li class="footer__contacts-li"><a href="#"><i class="fa fa-phone fa-fw"></i> +1 (416) 669-0619 </a></li>
+							<li class="footer__contacts-li"><a href="#"><i class="fa fa-envelope fa-fw"></i>
+									example@rawbalance.com</a></li>
+						</ul>
+						<!-- /.footer__contacts -->
+						<ul class="footer__social">
+							<li class="social__li"><a href="#"><i class="fa fa-instagram"></i></a></li>
+							<li class="social__li"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+							<li class="social__li"><a href="#"><i class="fa fa-twitter"></i></a></li>
+						</ul>
+						<!-- /.footer__social -->
+						<ul class="footer__working">
+							<li class="working"><span class="working__day">Mon</span><span class="working__time">08:00 - 20:00</span>
+							</li>
+							<li class="working"><span class="working__day">Tue</span><span class="working__time">08:00 - 20:00</span>
+							</li>
+							<li class="working"><span class="working__day">Wed</span><span class="working__time">08:00 - 20:00</span>
+							</li>
+							<li class="working"><span class="working__day">Thu</span><span class="working__time">08:00 - 20:00</span>
+							</li>
+							<li class="working"><span class="working__day">Fri</span><span class="working__time">08:00 - 20:00</span>
+							</li>
+							<li class="working"><span class="working__day">Sat</span><span class="working__time">08:00 - 20:00</span>
+							</li>
+							<li class="working closed"><span class="working__day">Sun</span><span class="working__time">Closed</span>
+							</li>
+							<!-- /.working -->
+						</ul>
+						<!-- /.footer__working -->
+					</div>
+					<!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<div class="footer__center">
+							<div class="footer__txt">
+								<p>
+									When you are looking for the best raw dog food, give us a call, or visit our website, or check us out
+									on
+									<a href="#">Instagram.</a>
+								</p>
+
+								<p>
+									You can also visit the store and get to know us better! We specialize in fresh, locally grown, high
+									quality meat.
+								</p>
+
+								<p>
+									We only deliver fresh, human grade, high quality Dog food. The same meat we serve our families.
+								</p>
+							</div>
+							<!-- /.footer__txt -->
+
+							<div class="footer__map">
+								MAP
+							</div>
+							<!-- /.footer__map -->
+						</div>
+						<!-- /.footer__center -->
+					</div>
+					<!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<div class="footer__form">
+							<h3>For questions about any of our products, or help with placing your order, don't hesitate to
+								<strong>contact us:</strong></h3>
+							<form>
+								<label>
+									<input type="text" name="name" placeholder="Name" required>
+								</label>
+								<label>
+									<input type="tel" name="phone" id="phone" required>
+								</label>
+								<label>
+									<input type="email" name="email" placeholder="E-mail" required>
+								</label>
+								<label>
+									<button type="submit" class="btn">Submit</button>
+								</label>
+							</form>
+						</div>
+						<!-- /.footer__form -->
+					</div>
+					<!-- /.col-lg-4 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /.section s-contacts -->
+
+		<footer class="main__footer">
+			<div class="footer__line">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-2">
+							<a href="#" class="brand">
+								<picture>
+									<source srcset="{% static 'images/dest/logo.webp' %}" type="image/webp">
+									<source srcset="{% static 'images/dest/logo.png' %}" type="image/png">
+									<img src="{% static 'images/dest/logo.png' %}" alt="RawBalance">
+								</picture>
+							</a>
+							<!-- /.brand -->
+						</div>
+						<!-- /.col-lg-2 -->
+						<div class="col-lg-7">
+							<div class="footer__line-center">
+								<div class="footer__line-link">
+									<a href="#">Privacy Policy</a>
+								</div>
+								<!-- /.footer__line-link -->
+								<div class="footer__line-copy">© RAW BALANCE, 2020. Copyright all rights reserved</div>
+							</div>
+							<!-- /.footer__line-center -->
+						</div>
+						<!-- /.col-lg-7 -->
+						<div class="col-lg-3">
+							<div class="footer__line-right">
+								<div class="footer__line-phone">
+									<a href="tel:"><i class="fa fa-phone"></i>+1 (416) 669-06-19</a>
+								</div>
+								<!-- /.footer__line-phone -->
+							</div>
+							<!-- /.footer__line-right -->
+						</div>
+						<!-- /.col-lg-3 -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- /.footer__line -->
+		</footer>
+		<!-- /.main__footer -->
+
+
+	</div>
+	<!-- /.wrapper -->
+
+
+	<script src="{% static 'js/app.min.js' %}"></script>
+
+	<!-- Developed by UxCodes -->
+
+</body>
+
+</html>
