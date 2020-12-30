@@ -63,3 +63,4 @@ def registration(request):
     else:
         registrationForm = RegistrationForm()
     return render(request, 'main/registration.html', {'form': registrationForm})
+

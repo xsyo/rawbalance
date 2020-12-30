@@ -78,10 +78,10 @@
 						<div class="col-lg-3 d-lg-flex d-none">
 							<ul class="top__line-account d-lg-flex d-none">
 								{% if user.is_authenticated %}
+									<li class="account__li"><a href="{% url 'logout' %}" class="account__link">Logout</a></li>
+								{% else %}
 									<li class="account__li"><a href="{% url 'login' %}" class="account__link">Login</a></li>
 									<li class="account__li btn-border"><a href="{% url 'registration' %}" class="account__link">Sign in</a></li>
-								{% else %}
-									<li class="account__li"><a href="{% url 'logout' %}" class="account__link">Logout</a></li>
 								{% endif %}
 							</ul>
 							<!-- /.top__line-account -->
