@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 
 from phonenumber_field.formfields import PhoneNumberField
 
+from .models import Profile
+
 
 class RegistrationForm(forms.Form):
 
@@ -24,3 +26,12 @@ class RegistrationForm(forms.Form):
         if get_user_model().objects.filter(username=email).exists():
             raise forms.ValidationError('Пользовтель с таким email существует')
         return email
+
+
+class ProfileForm(forms.ModelForm):
+
+    phone = PhoneNumberField()
+
+    class Meta:
+        model = Profile
+        fields = ['fio', 'email', 'adress', 'phone']

@@ -1,10 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic import TemplateView, ListView
 from django.contrib.auth import get_user_model
 from django.db import IntegrityError
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
-from .models import Product, Category, Profile
-from .forms import RegistrationForm
+from paypal.standard.forms import PayPalPaymentsForm
+
+from .models import Product, Category, Profile, Order
+from .forms import RegistrationForm, ProfileForm
 
 
 class MainTemplateView(ListView):
@@ -64,3 +68,63 @@ def registration(request):
         registrationForm = RegistrationForm()
     return render(request, 'main/registration.html', {'form': registrationForm})
 
+
+def ordering_process(request, product_id):
+
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.user.is_authenticated:
+        order = Order(customer=request.user.profile,
+                      product=product)
+        
+        order.save()
+
+        return redirect('payment_process', order_id=order.id) # страница оплаты
+    
+    if request.method == 'POST':
+        form = ProfileForm(request.POST)
+
+        if form.is_valid():
+            profile = form.save()
+            order = Order(customer=profile,
+                      product=product)            
+            order.save()
+
+            return redirect('payment_process', order_id=order.id) # страница оплаты
+    else:
+        form = ProfileForm()
+    
+    return render(request, 'main/ordering_process.html', {'form': form})
+
+
+def payment_process(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    host = request.get_host()
+
+    paypal_dict = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': order.get_price(),
+        'item_name': 'Order {}'.format(order.id),
+        'invoice': str(order.id),
+        'custom': str(order.customer.id),
+        'currency_code': 'USD',
+        'notify_url': 'http://{}{}'.format(host,
+                                           reverse('paypal-ipn')),
+        'return_url': 'http://{}{}'.format(host,
+                                           reverse('payment_done')),
+        'cancel_return': 'http://{}{}'.format(host,
+                                              reverse('payment_cancelled')),
+    }
+
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    return render(request, 'main/payment_process.html', {'order': order, 'form': form})
+
+
+@csrf_exempt
+def payment_done(request):
+    return render(request, 'main/payment_done.html')
+
+
+@csrf_exempt
+def payment_canceled(request):
+    return render(request, 'main/payment_cancelled.html')

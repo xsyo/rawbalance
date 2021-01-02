@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 pillow = "*"
 django-phonenumber-field = {extras = ["phonenumbers"],version = "*"}
+django-paypal = "*"
 
 [requires]
 python_version = "3.7"

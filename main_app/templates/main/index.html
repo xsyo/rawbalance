@@ -294,7 +294,7 @@
 									<div class="products__items-bottom">
 										<div class="price">C$ {{ product.price }}</div>
 										<!-- /.price -->
-										<a href="#" class="btn">Buy</a>
+										<a href="{% url 'ordering_process' product.id %}" class="btn">Buy</a>
 									</div>
 									<!-- /.products__items-bottom -->
 								</div>

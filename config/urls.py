@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include('main_app.urls')),
+
+    path('paypal/', include('paypal.standard.ipn.urls')),
 ]
 
 if settings.DEBUG:

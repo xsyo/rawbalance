@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main_app.apps.MainAppConfig',
 
     'phonenumber_field',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,6 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL =  '/'
 LOGOUT_REDIRECT_URL =  '/'
+
+PAYPAL_RECEIVER_EMAIL = 'mrspock-facilitator@gmail.com'
+PAYPAL_TEST = True

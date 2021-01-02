@@ -42,3 +42,15 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Order(models.Model):
+
+    customer = models.ForeignKey(Profile, on_delete=models.DO_NOTHING, related_name='orders')
+    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    paid = models.BooleanField(default=False)
+
+    def get_price(self):
+        return self.product.price
