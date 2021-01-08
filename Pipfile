@@ -10,6 +10,8 @@ django = "*"
 pillow = "*"
 django-phonenumber-field = {extras = ["phonenumbers"],version = "*"}
 django-paypal = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
