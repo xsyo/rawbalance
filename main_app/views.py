@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.contrib.auth import get_user_model
 from django.db import IntegrityError
 from django.conf import settings
@@ -23,6 +23,13 @@ class MainTemplateView(ListView):
         context['categories'] = Category.objects.all()
         return context
 
+
+class ProductDetailView(DetailView):
+
+    model = Product
+    queryset = Product.objects.all()
+    context_object_name  = 'product'
+    template_name = 'main/product_detail.html'
 
 class AboutTemplateView(TemplateView):
 

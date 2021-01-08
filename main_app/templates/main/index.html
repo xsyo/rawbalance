@@ -287,7 +287,7 @@
 										<img src="{{ product.img.url }}" alt="Honeycomb Tripe">
 									</div>
 									<!-- /.products__items-img -->
-									<h4 class="products__items-title">{{ product.title }}</h4>
+									<h4 class="products__items-title"><a href="{% url 'product-detail' product.id %}">{{ product.title }}</a></h4>
 									<!-- /.products__items-title -->
 									<p class="products__items-desc">{{ product.description|slice:':30' }}...</p>
 									<!-- /.products__items-desc -->
