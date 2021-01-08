@@ -142,5 +142,5 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL =  '/'
 LOGOUT_REDIRECT_URL =  '/'
 
-PAYPAL_RECEIVER_EMAIL = 'mrspock-facilitator@gmail.com'
-PAYPAL_TEST = True
+PAYPAL_RECEIVER_EMAIL = 'yurryjekimov@icloud.com'
+PAYPAL_TEST = False
